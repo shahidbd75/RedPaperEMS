@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{90220DF6-FD7A-4816-92DE-53454401896D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{460A83EB-BD06-4859-BC13-ABCE9B4CC175}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{750FE06F-9767-4170-82B6-9C5F02F07D14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FD51F77C-015F-492C-8BC2-B05B9D678BA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{08539BA7-F636-49B7-A806-8C3E32AD3462}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B2660C48-9250-44B3-B42F-D82FEB8A088D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPaperEMS.Domain", "RedPaperEMS.Domain\RedPaperEMS.Domain.csproj", "{BF06C9CA-23F9-44B3-B499-3C18A49A6A57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPaperEMS.Application", "RedPaperEMS.Application\RedPaperEMS.Application.csproj", "{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF06C9CA-23F9-44B3-B499-3C18A49A6A57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF06C9CA-23F9-44B3-B499-3C18A49A6A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF06C9CA-23F9-44B3-B499-3C18A49A6A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF06C9CA-23F9-44B3-B499-3C18A49A6A57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{750FE06F-9767-4170-82B6-9C5F02F07D14} = {90220DF6-FD7A-4816-92DE-53454401896D}
+		{FD51F77C-015F-492C-8BC2-B05B9D678BA3} = {90220DF6-FD7A-4816-92DE-53454401896D}
+		{08539BA7-F636-49B7-A806-8C3E32AD3462} = {90220DF6-FD7A-4816-92DE-53454401896D}
+		{B2660C48-9250-44B3-B42F-D82FEB8A088D} = {90220DF6-FD7A-4816-92DE-53454401896D}
+		{BF06C9CA-23F9-44B3-B499-3C18A49A6A57} = {FD51F77C-015F-492C-8BC2-B05B9D678BA3}
+		{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB} = {FD51F77C-015F-492C-8BC2-B05B9D678BA3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1549EF83-62BD-4CD2-8E8F-A0830CC00330}
+	EndGlobalSection
+EndGlobal
