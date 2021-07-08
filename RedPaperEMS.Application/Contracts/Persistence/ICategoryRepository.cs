@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using RedPaperEMS.Domain.Entities;
 
 namespace RedPaperEMS.Application.Contracts.Persistence
 {
-    interface ICategoryRepository: IAsyncRepository<Category>
+    public interface ICategoryRepository: IAsyncRepository<Category>
     {
+        Task<List<Category>> GetCategoriesWithEvents(bool requestIncludeHistory);
     }
 }

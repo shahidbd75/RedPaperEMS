@@ -2,7 +2,7 @@
 
 namespace RedPaperEMS.Application.Contracts.Persistence
 {
-    interface IEventRepository : IAsyncRepository<Event>
+    public interface IEventRepository : IAsyncRepository<Event>
     {
     }
 }

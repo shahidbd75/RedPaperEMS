@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MediatR;
 
-namespace RedPaperEMS.Application.Features.Events
+namespace RedPaperEMS.Application.Features.Events.Commands.UpdateEvent
 {
-    public class EventDetailVm
+    public class UpdateEventCommand: IRequest
     {
         public Guid EventId { get; set; }
         public string Name { get; set; }
-        public double Price { get; set; }
+        public int Price { get; set; }
         public string Artist { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public Guid CategoryId { get; set; }
-        public CategoryDto Category { get; set; }
     }
 }

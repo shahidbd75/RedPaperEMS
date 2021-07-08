@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RedPaperEMS.Application.Features.Events
+﻿namespace RedPaperEMS.Application.Features.Events.Queries.GetEventDetail
 {
     public class CategoryDto
     {

@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using MediatR;
-using RedPaperEMS.Domain.Entities;
 
-namespace RedPaperEMS.Application.Features.Events
+namespace RedPaperEMS.Application.Features.Events.Queries.GetEventList
 {
     public class GetEventsListQuery: IRequest<List<EventListVm>>
     {

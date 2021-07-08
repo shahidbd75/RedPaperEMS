@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -9,7 +7,7 @@ using MediatR;
 using RedPaperEMS.Application.Contracts.Persistence;
 using RedPaperEMS.Domain.Entities;
 
-namespace RedPaperEMS.Application.Features.Events
+namespace RedPaperEMS.Application.Features.Events.Queries.GetEventList
 {
     public class GetEventsListQueryHandler : IRequestHandler<GetEventsListQuery, List<EventListVm>>
     {

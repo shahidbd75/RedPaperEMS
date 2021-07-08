@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RedPaperEMS.Application.Features.Events
+namespace RedPaperEMS.Application.Features.Events.Queries.GetEventList
 {
     public class EventListVm
     {

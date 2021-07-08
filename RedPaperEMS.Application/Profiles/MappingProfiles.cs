@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
-using RedPaperEMS.Application.Features.Events;
+﻿using AutoMapper;
+using RedPaperEMS.Application.Features.Categories.Queries.GetCategoriesListWithEvents;
+using RedPaperEMS.Application.Features.Categories.Queries.GetCategoryList;
+using RedPaperEMS.Application.Features.Events.Commands.CreateEvent;
+using RedPaperEMS.Application.Features.Events.Commands.UpdateEvent;
+using RedPaperEMS.Application.Features.Events.Queries.GetEventDetail;
+using RedPaperEMS.Application.Features.Events.Queries.GetEventList;
 using RedPaperEMS.Domain.Entities;
 
 namespace RedPaperEMS.Application.Profiles
@@ -14,6 +16,10 @@ namespace RedPaperEMS.Application.Profiles
             CreateMap<Event, EventListVm>().ReverseMap();
             CreateMap<Event, EventDetailVm>().ReverseMap();
             CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Category, CategoryListVm>().ReverseMap();
+            CreateMap<Category, CategoryEventListVm>().ReverseMap();
+            CreateMap<Event, CreateEventCommand>().ReverseMap();
+            CreateMap<Event, UpdateEventCommand>().ReverseMap();
         }
     }
 }

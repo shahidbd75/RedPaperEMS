@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using RedPaperEMS.Application.Contracts.Persistence;
 using RedPaperEMS.Domain.Entities;
 
-namespace RedPaperEMS.Application.Features.Events
+namespace RedPaperEMS.Application.Features.Events.Queries.GetEventDetail
 {
     public class GetEventDetailQueryHandler: IRequestHandler<GetEventDetailQuery, EventDetailVm>
     {
