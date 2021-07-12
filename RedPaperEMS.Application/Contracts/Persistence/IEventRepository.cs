@@ -6,6 +6,6 @@ namespace RedPaperEMS.Application.Contracts.Persistence
 {
     public interface IEventRepository : IAsyncRepository<Event>
     {
-        Task<bool> IsEventNameAndDateUnique(string name, in DateTime date);
+        Task<bool> IsEventNameAndDateUnique(string name, DateTime eventDate);
     }
 }

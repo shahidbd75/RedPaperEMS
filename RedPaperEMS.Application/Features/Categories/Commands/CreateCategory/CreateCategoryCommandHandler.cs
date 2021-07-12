@@ -43,7 +43,7 @@ namespace RedPaperEMS.Application.Features.Categories.Commands.CreateCategory
             {
                 var category = new Category(){Name = request.Name};
                 category = await _categoryRepository.AddAsync(category);
-                createCategoryCommandResponse.Category = _mapper.Map<CreateCategoryDto>(category)
+                createCategoryCommandResponse.Category = _mapper.Map<CreateCategoryDto>(category);
             }
 
             return createCategoryCommandResponse;

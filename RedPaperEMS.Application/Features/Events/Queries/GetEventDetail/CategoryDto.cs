@@ -1,8 +1,10 @@
-﻿namespace RedPaperEMS.Application.Features.Events.Queries.GetEventDetail
+﻿using System;
+
+namespace RedPaperEMS.Application.Features.Events.Queries.GetEventDetail
 {
     public class CategoryDto
     {
-        public int CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
         public string Name { get; set; }
     }
 }
