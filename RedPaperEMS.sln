@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPaperEMS.Domain", "RedPa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPaperEMS.Application", "RedPaperEMS.Application\RedPaperEMS.Application.csproj", "{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPaperEMS.Persistence", "RedPaperEMS.Persistence\RedPaperEMS.Persistence.csproj", "{05E20A1A-0B8C-4297-99DF-133D6B8549FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPaperEMS.Persistence", "RedPaperEMS.Persistence\RedPaperEMS.Persistence.csproj", "{05E20A1A-0B8C-4297-99DF-133D6B8549FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPaperEMS.Infrastructure", "RedPaperEMS.Infrastructure\RedPaperEMS.Infrastructure.csproj", "{F4236327-39A9-4524-A491-596A906AABE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPaperEMS.Infrastructure", "RedPaperEMS.Infrastructure\RedPaperEMS.Infrastructure.csproj", "{F4236327-39A9-4524-A491-596A906AABE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPaperEMS.Api", "RedPaperEMS.Api\RedPaperEMS.Api.csproj", "{A607DE2C-918D-47DF-A4C9-D5C48A547238}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F4236327-39A9-4524-A491-596A906AABE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4236327-39A9-4524-A491-596A906AABE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4236327-39A9-4524-A491-596A906AABE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A607DE2C-918D-47DF-A4C9-D5C48A547238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A607DE2C-918D-47DF-A4C9-D5C48A547238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A607DE2C-918D-47DF-A4C9-D5C48A547238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A607DE2C-918D-47DF-A4C9-D5C48A547238}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{C2F1A4DB-622C-45F3-9E88-7B2FCA0327CB} = {FD51F77C-015F-492C-8BC2-B05B9D678BA3}
 		{05E20A1A-0B8C-4297-99DF-133D6B8549FB} = {08539BA7-F636-49B7-A806-8C3E32AD3462}
 		{F4236327-39A9-4524-A491-596A906AABE2} = {08539BA7-F636-49B7-A806-8C3E32AD3462}
+		{A607DE2C-918D-47DF-A4C9-D5C48A547238} = {750FE06F-9767-4170-82B6-9C5F02F07D14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1549EF83-62BD-4CD2-8E8F-A0830CC00330}
