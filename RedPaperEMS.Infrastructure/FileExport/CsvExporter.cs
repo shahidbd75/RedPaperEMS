@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Text;
-using CsvHelper;
+﻿using CsvHelper;
 using CsvHelper.Configuration;
 using RedPaperEMS.Application.Contracts.Infrastructure;
 using RedPaperEMS.Application.Features.Events.Queries.GetEventsExport;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 
 namespace RedPaperEMS.Infrastructure.FileExport
 {

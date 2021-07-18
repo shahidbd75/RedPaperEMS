@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using RedPaperEMS.Application.Features.Categories.Commands.CreateCategory;
 using RedPaperEMS.Application.Features.Categories.Queries.GetCategoriesListWithEvents;
 using RedPaperEMS.Application.Features.Categories.Queries.GetCategoryList;
 using RedPaperEMS.Application.Features.Events.Commands.CreateEvent;
@@ -20,6 +21,7 @@ namespace RedPaperEMS.Application.Profiles
             CreateMap<Event, UpdateEventCommand>().ReverseMap();
 
             CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Category, CreateCategoryDto>().ReverseMap();
             CreateMap<Category, CategoryListVm>().ReverseMap();
             CreateMap<Category, CategoryEventListVm>().ReverseMap();
         }
