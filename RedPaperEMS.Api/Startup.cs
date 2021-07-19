@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using RedPaperEMS.Api.Middleware;
 using RedPaperEMS.Api.Utility;
 using RedPaperEMS.Application;
 using RedPaperEMS.Infrastructure;
@@ -53,6 +54,8 @@ namespace RedPaperEMS.Api
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Red Paper EMS");
                 options.RoutePrefix = string.Empty;
             });
+
+            app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseCors("Open");
 

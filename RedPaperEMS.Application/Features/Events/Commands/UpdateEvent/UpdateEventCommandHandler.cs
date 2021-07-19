@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
 using RedPaperEMS.Application.Contracts.Persistence;
+using RedPaperEMS.Application.Exceptions;
 using RedPaperEMS.Domain.Entities;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RedPaperEMS.Application.Features.Events.Commands.UpdateEvent
 {
     public class UpdateEventCommandHandler: IRequestHandler<UpdateEventCommand>
     {
-        private IAsyncRepository<Event> _eventRepository;
-        private IMapper _mapper;
+        private readonly IAsyncRepository<Event> _eventRepository;
+        private readonly IMapper _mapper;
 
         public UpdateEventCommandHandler(IAsyncRepository<Event> eventRepository, IMapper mapper)
         {
@@ -24,6 +22,18 @@ namespace RedPaperEMS.Application.Features.Events.Commands.UpdateEvent
         public async Task<Unit> Handle(UpdateEventCommand request, CancellationToken cancellationToken)
         {
             var eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
+            if (eventToUpdate == null)
+            {
+                throw new NotFoundException(nameof(Event), request.EventId);
+            }
+
+            var validator = new UpdateEventCommandValidator();
+            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+
+            if (validationResult.Errors.Count > 0)
+            {
+                throw new ValidationException(validationResult);
+            }
 
             _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
 
