@@ -25,8 +25,6 @@ namespace RedPaperEMS.Api.Controllers
         {
             var result = await _mediator.Send(new GetEventsListQuery());
             return Ok(result);
-
-            return Ok(result);
         }
     }
 }
