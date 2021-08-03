@@ -1,9 +1,12 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using RedPaperEMS.Api.Middleware;
+using RedPaperEMS.Api.Utility;
 using RedPaperEMS.Application;
 using RedPaperEMS.Identity;
 using RedPaperEMS.Infrastructure;
@@ -22,6 +25,7 @@ namespace RedPaperEMS.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            AddSwagger(services);
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
             services.AddPersistenceServices(Configuration);
@@ -44,13 +48,36 @@ namespace RedPaperEMS.Api
             }
 
             app.UseHttpsRedirection();
-            app.UseRouting();
 
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Red Paper EMS");
+                options.RoutePrefix = string.Empty;
+            });
+
+            app.UseCustomExceptionHandler();
+            app.UseRouting();
             app.UseCors("Open");
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+        }
+
+        private void AddSwagger(IServiceCollection services)
+        {
+            services.AddSwaggerGen(swagger =>
+            {
+                swagger.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Red Paper EMS API",
+                    Description = "All api end point for red paper. Need authentication to access",
+                    Version = "v1"
+                });
+                //swagger.OperationFilter<FileResultContentTypeOperationFilter>();
             });
         }
     }

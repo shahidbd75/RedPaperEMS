@@ -20,10 +20,11 @@ namespace RedPaperEMS.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetAllEvents")]
+        [HttpGet("getAllEvents")]
         public async Task<ActionResult> GetAllEvents()
         {
             var result = await _mediator.Send(new GetEventsListQuery());
+            return Ok(result);
 
             return Ok(result);
         }

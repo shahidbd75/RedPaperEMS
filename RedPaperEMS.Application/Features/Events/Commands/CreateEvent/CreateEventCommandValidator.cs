@@ -10,7 +10,7 @@ namespace RedPaperEMS.Application.Features.Events.Commands.CreateEvent
 {
     public class CreateEventCommandValidator: AbstractValidator<CreateEventCommand>
     {
-        private IEventRepository _eventRepository;
+        private readonly IEventRepository _eventRepository;
         public CreateEventCommandValidator(IEventRepository eventRepository)
         {
             _eventRepository = eventRepository;

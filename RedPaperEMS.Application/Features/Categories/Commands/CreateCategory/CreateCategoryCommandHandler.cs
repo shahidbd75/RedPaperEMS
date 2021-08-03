@@ -12,8 +12,8 @@ namespace RedPaperEMS.Application.Features.Categories.Commands.CreateCategory
 {
     public class CreateCategoryCommandHandler:IRequestHandler<CreateCategoryCommand,CreateCategoryCommandResponse>
     {
-        IMapper _mapper;
-        private IAsyncRepository<Category> _categoryRepository;
+        private readonly IMapper _mapper;
+        private readonly IAsyncRepository<Category> _categoryRepository;
 
         public CreateCategoryCommandHandler(IMapper mapper, IAsyncRepository<Category> categoryRepository)
         {

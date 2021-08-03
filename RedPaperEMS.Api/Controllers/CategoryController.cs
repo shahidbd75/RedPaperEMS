@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
 using RedPaperEMS.Application.Features.Categories.Commands.CreateCategory;
 using RedPaperEMS.Application.Features.Categories.Queries.GetCategoriesListWithEvents;
 using RedPaperEMS.Application.Features.Categories.Queries.GetCategoryList;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RedPaperEMS.Api.Controllers
 {
@@ -15,7 +13,7 @@ namespace RedPaperEMS.Api.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private IMediator _mediator;
+        private readonly IMediator _mediator;
 
         public CategoryController(IMediator mediator)
         {
@@ -31,8 +29,8 @@ namespace RedPaperEMS.Api.Controllers
         }
 
         [HttpGet("allWithEvents", Name = "GetCategoriesWithEvents")]
-        [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<List<CategoryEventListVm>>> GetCategoriesWithEvents(bool includeHistory)
         {
             GetCategoriesListWithEventsQuery getCategoriesListWithEventsQuery = new GetCategoriesListWithEventsQuery()
@@ -43,7 +41,7 @@ namespace RedPaperEMS.Api.Controllers
             return Ok(dtos);
         }
 
-        [HttpPost("AddCategory")]
+        [HttpPost("addCategory")]
         public async Task<ActionResult<CreateCategoryCommandResponse>> Create([FromBody] CreateCategoryCommand createCategoryCommand)
         {
             var response = await _mediator.Send(createCategoryCommand);

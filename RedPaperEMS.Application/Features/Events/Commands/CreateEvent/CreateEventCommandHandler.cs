@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using RedPaperEMS.Application.Contracts.Infrastructure;
 using RedPaperEMS.Application.Contracts.Persistence;
 using RedPaperEMS.Application.Exceptions;
@@ -17,12 +18,14 @@ namespace RedPaperEMS.Application.Features.Events.Commands.CreateEvent
     {
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
-        private IEmailService _emailService;
-        public CreateEventCommandHandler(IEventRepository eventRepository, IMapper mapper, IEmailService emailService)
+        private readonly IEmailService _emailService;
+        private ILogger<CreateEventCommand> _logger;
+        public CreateEventCommandHandler(IEventRepository eventRepository, IMapper mapper, IEmailService emailService, ILogger<CreateEventCommand> logger)
         {
             _eventRepository = eventRepository;
             _mapper = mapper;
             _emailService = emailService;
+            _logger = logger;
         }
         public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
@@ -43,7 +46,7 @@ namespace RedPaperEMS.Application.Features.Events.Commands.CreateEvent
             }
             catch (Exception e)
             {
-                // logging in future
+                _logger.LogError($"Mailing about event {@event.EventId} failed due to an error with the email service:{e.Message}");
             }
             return @event.EventId;
         }
