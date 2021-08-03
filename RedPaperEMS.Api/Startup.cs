@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -71,13 +72,41 @@ namespace RedPaperEMS.Api
         {
             services.AddSwaggerGen(swagger =>
             {
+                swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 5fhowif43hf983297jx'",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Id = "Bearer",
+                                Type = ReferenceType.SecurityScheme
+                            },
+                            Name = "Bearer",
+                            Scheme = "oauth2",
+                            In = ParameterLocation.Header
+                        },
+                        new List<string>()
+                    }
+                });
                 swagger.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Red Paper EMS API",
                     Description = "All api end point for red paper. Need authentication to access",
                     Version = "v1"
                 });
-                //swagger.OperationFilter<FileResultContentTypeOperationFilter>();
+                swagger.OperationFilter<FileResultContentTypeOperationFilter>();
             });
         }
     }
