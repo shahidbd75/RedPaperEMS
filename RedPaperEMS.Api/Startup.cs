@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RedPaperEMS.Application;
+using RedPaperEMS.Identity;
 using RedPaperEMS.Infrastructure;
 using RedPaperEMS.Persistence;
 
@@ -24,6 +25,7 @@ namespace RedPaperEMS.Api
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
             services.AddPersistenceServices(Configuration);
+            services.AddIdentityServices(Configuration);
 
             services.AddControllers();
 

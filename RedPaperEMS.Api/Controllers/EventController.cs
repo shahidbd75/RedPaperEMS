@@ -24,6 +24,8 @@ namespace RedPaperEMS.Api.Controllers
         public async Task<ActionResult> GetAllEvents()
         {
             var result = await _mediator.Send(new GetEventsListQuery());
+
+            return Ok(result);
         }
     }
 }
